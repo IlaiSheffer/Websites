@@ -5,14 +5,47 @@
 <html>
 <head runat="server">
     <title></title>
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style>
+        img.menu {
+            width: 100px;
+            height: 50px
+        }
+    </style>
 </head>
-<body>
-     <h1>Ilai's website</h1>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
-        
-        </asp:ContentPlaceHolder>
-   
+<body dir="rtl">
+    <h1>Ilai's website</h1>
+    <table>
+        <tr>
+            <td>
+                <a href="דף%20הבית.aspx">
+                    <img class="menu" src="Images/דף%20הבית.png" /></a>
+                <a href="אודות.aspx">
+                    <img class="menu" src="Images/אודות.png" /></a>
+                <a href="גלריה.aspx">
+                    <img class="menu" src="Images/גלריה.png" /></a>
+                <a href="הרשמה.aspx">
+                    <img class="menu" src="Images/הרשמה.png" /></a>
+                <a href="כניסה.aspx">
+                    <img class="menu"  src="Images/כניסה.png" /></a>
+                <a href="מנהל.aspx">
+                    <img class="menu" src="Images/מנהל.png" /></a>
+                <a href="חיפוש.aspx">
+                    <img class="menu" src="Images/חיפוש.png" /></a>
+                    <a href="עדכון%20פרטים.aspx">
+                    <img class="menu" src="Images/עדכון%20פרטים.png" /></a>
+                <a href="יציאה.aspx">
+                    <img class="menu" src="Images/יציאה.png" /></a>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>
