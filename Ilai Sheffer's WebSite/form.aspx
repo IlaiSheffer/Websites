@@ -4,42 +4,52 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <h2>form</h2>
-        <form dir="rtl">
-        :שם פרטי <input type="text" name="firstname">
-        <br />
-        :אימייל <input type="text" name="EMAIL">
-        <br />
-        טלפון
-        <select name=מספר טלפון>
-            <option value="1">050</option>
-            <option value="2">051</option>
-            <option value="3">052</option>
-            <option value="4">053</option>
-            <option value="5">054</option>
-            <option value="6">055</option>
-            <option value="7">056</option>
-            <option value="8">057</option>
-            <option value="9">058</option>
-            <option value="10">059</option>
-        </select>
-    
-        <input type="text" name="text1">
-        <br />
-        :גיל <input type="text" name="age">
-        <br />
-        כפר סבא?
-        <input type="y" name="כן" checked>
-        <input type="n" name="לא">
-        <br />
-        <p>באילו ערים היית:</p>
-        <input type="checkbox" name="רעננה" checked>
-        <input type="checkbox" name="הוד השרון">
-        <input type="checkbox" name="הרצליה">
-        <br />
-        <p>ספר על עצמך:</p>
-        <textarea rows="5" cols="20" name="textarea1"></textarea>
-        <br />
+         <form dir="rtl" method="post" runat="server">
+     :שם פרטי <input type="text" name="firstname" id="firstname">
+     <br />
+     :אימייל <input type="text" name="EMAIL" id="EMAIL">
+     <br />
+     טלפון
+     <select name="Prefix" id="Prefix">
+         <option value="050">050</option>
+         <option value="051">051</option>
+         <option value="052">052</option>
+         <option value="053">053</option>
+         <option value="054">054</option>
+         <option value="055">055</option>
+         <option value="056">056</option>
+         <option value="057">057</option>
+         <option value="058">058</option>
+         <option value="059">059</option>
+     </select>
 
-    </form>
+     <input type="text" name="phoneNumber" id="phoneNumber">
+     <br />
+     :גיל <input type="text" name="age" id="age">
+     <br />
+     האם אתה גר בכפר סבא?<br />
+     <input type="radio" name="radio1" id="rd1" value="כן" checked>כן<br />
+     <input type="radio" name="radio1" id="rd2" value="לא">לא
+     <br />
+     <p>באילו ערים היית:</p>
+     <input type="checkbox" name="checkCities" id="chk1" value="רעננה" checked>רעננה<br/>
+     <input type="checkbox" name="checkCities" id="chk2" value="הוד השרון">הוד השרון<br />
+     <input type="checkbox" name="checkCities" id="chk3" value="הרצליה">הרצליה
+     <br />
+     <p>ספר על עצמך:</p>
+     <textarea rows="5" cols="20" name="textarea1" id="textarea1"></textarea>
+     <br />
+     <input type="submit" value="שלח"/>
+           <div>
+               <%=firstName%><br />
+               <%=email%><br />
+               <%=age%><br />
+               <%=Prefix%><br />
+               <%=phoneNumber%><br />
+               <%=radio1%><br />
+               <%=checkCities%><br />
+               <%=textarea1%><br />
+           </div>
+ </form>
 </asp:Content>
 

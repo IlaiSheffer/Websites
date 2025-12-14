@@ -6,7 +6,7 @@
     <title></title>
 </head>
 <body>
-    <form dir="rtl">
+    <form dir="rtl" method="post">
         :שם פרטי <input type="text" name="firstname">
         <br />
         :אימייל <input type="text" name="EMAIL">
@@ -24,7 +24,7 @@
             <option value="9">058</option>
             <option value="10">059</option>
         </select>
-    
+
         <input type="text" name="text1">
         <br />
         :גיל <input type="text" name="age">
@@ -34,14 +34,14 @@
         <input type="n" name="לא">
         <br />
         <p>באילו ערים היית:</p>
-        <input type="checkbox" name="רעננה" checked>
-        <input type="checkbox" name="הוד השרון">
-        <input type="checkbox" name="הרצליה">
+        <input type="checkbox" name="רעננה" checked>רעננה<br/>
+        <input type="checkbox" name="הוד השרון">הוד השרון<br />
+        <input type="checkbox" name="הרצליה">הרצליה
         <br />
         <p>ספר על עצמך:</p>
         <textarea rows="5" cols="20" name="textarea1"></textarea>
         <br />
-
+        <input type="submit" value="שלח"/>
     </form>
 
 </body>
