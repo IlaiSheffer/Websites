@@ -15,8 +15,17 @@
     </style>
 </head>
 <body dir="rtl">
-    <h1>Ilai's website</h1>
     <table>
+        <tr>
+<td>
+<img src="Images/לוגו.png" style="width:200px; height:auto;">
+    <td />
+    <td>
+    <h1>אתר החיות של עיליי</h1>
+</td>
+        </tr>
+        
+    
         <tr>
             <td>
                 <a href="דף%20הבית.aspx">
