@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class form : System.Web.UI.Page
 {
-    public string firstName, email, age, Prefix, phoneNumber, radio1, checkCities,textarea1;
+    public string firstName, email, age, Prefix, phoneNumber, radio1, checkCities,textarea1,password;
     protected void Page_Load(object sender, EventArgs e)
     {
         if(Page.IsPostBack)
@@ -20,7 +20,7 @@ public partial class form : System.Web.UI.Page
             age = "age = " + Request.Form["age"];
             Prefix = "Prefix = " + Request.Form["Prefix"];
             phoneNumber = "phoneNumber = " + Request.Form["phoneNumber"];
-
+            password = "password = " + Request.Form["password"];
         }
 
 

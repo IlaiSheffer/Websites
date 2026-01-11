@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 public partial class הרשמה : System.Web.UI.Page
 {
-    public string firstName, email, age, Prefix, phoneNumber, radio1, checkCities, textarea1,update;
+    public string firstName, email, age, Prefix, phoneNumber, radio1, checkCities, textarea1,update,password;
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Page.IsPostBack)
@@ -18,7 +18,7 @@ public partial class הרשמה : System.Web.UI.Page
             Prefix = "Prefix = " + Request.Form["Prefix"];
             phoneNumber = "phoneNumber = " + Request.Form["phoneNumber"];
             update = "update= "+ Request.Form["radio2"];
-
+            password = "password = " + Request.Form["password"];
         }
     }
 }

@@ -10,6 +10,8 @@
      <br />
      :אימייל <input type="text" name="EMAIL" id="EMAIL">
      <br />
+     :סיסמה לאתר <input type="text" name="password" id="password">
+     <br />
      טלפון
      <select name="Prefix" id="Prefix">
          <option value="050">050</option>
@@ -43,6 +45,7 @@
                <%=phoneNumber%><br />
                <%=radio1%><br />
                <%=update%><br />
+               <%=password%><br />
            </div>
  </form>
 </asp:Content>
