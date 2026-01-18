@@ -6,7 +6,7 @@
     הרשמה
     <h2>form</h2>
          <form dir="rtl" method="post" runat="server">
-     :שם מלא <input type="text" name="firstname" id="firstname">
+     :שם מלא <input type="text" name="fullname" id="fullname">
      <br />
      :אימייל <input type="text" name="EMAIL" id="EMAIL">
      <br />
@@ -39,15 +39,17 @@
      <input type="radio" name="radio2" id="ad2" value="לא">לא<br />
      <input type="submit" value="שלח"/>
            <div>
-               <%=firstName%><br />
+               <%=fullName%><br />
                <%=email%><br />
+               <%=password%><br />
                <%=Prefix%><br />
                <%=phoneNumber%><br />
                <%=radio1%><br />
                <%=update%><br />
-               <%=password%><br />
+               <%=st %>
            </div>
  </form>
+<%=st %>
 </asp:Content>
 
 
