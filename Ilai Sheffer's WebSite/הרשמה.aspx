@@ -29,25 +29,16 @@
      <input type="text" name="phoneNumber" id="phoneNumber">
      <br />
      מה אתה רוצה לעשות?<br />
-     <input type="radio" name="radio1" id="rd1" value="לחפש חיה אבודה" checked>לחפש חיה אבודה<br />
+     <input type="radio" name="radio1" id="rd1" value="לחפש חיה אבודה">לחפש חיה אבודה<br />
      <input type="radio" name="radio1" id="rd2" value="להעלות חיה אבודה שמצאת">להעלות חיה אבודה שמצאת<br />
-     <input type="radio" name="radio1" id="rd3" value="להעלות חיה לחיפוש" checked>להעלות חיה לאימוץ<br />
+     <input type="radio" name="radio1" id="rd3" value="להעלות חיה לחיפוש">להעלות חיה לאימוץ<br />
      <input type="radio" name="radio1" id="rd4" value="לאמץ חיה">לאמץ חיה
      <br />
       תרצה לקבל עדכונים?<br />
-     <input type="radio" name="radio2" id="ad1" value="כן" checked>כן<br />
+     <input type="radio" name="radio2" id="ad1" value="כן">כן<br />
      <input type="radio" name="radio2" id="ad2" value="לא">לא<br />
      <input type="submit" value="שלח"/>
-           <div>
-               <%=fullName%><br />
-               <%=email%><br />
-               <%=password%><br />
-               <%=Prefix%><br />
-               <%=phoneNumber%><br />
-               <%=radio1%><br />
-               <%=update%><br />
-               <%=st %>
-           </div>
+
  </form>
 <%=st %>
 </asp:Content>
