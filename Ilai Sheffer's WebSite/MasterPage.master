@@ -8,26 +8,45 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style>
-        img.menu {
-            width: 100px;
-            height: 50px
-        }
+.menu-bar { 
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+ img.menu {
+    width: 150px;
+    height: auto;
+    }
+.site-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 20px;
+
+
     </style>
 </head>
 <body dir="rtl">
-    <table>
-        <tr>
-<td>
-<img src="Images/לוגו.png" style="width:200px; height:auto;">
-    <td />
-    <td>
-    <h1>אתר החיות של עיליי</h1>
+    <center>
+    <table width="80%" border="0">
+<tr>
+    <td width="150px">
+        <img src="Images/לוגו.png" style="width:100px; height:auto;">
+    </td>
+
+<td class="menu-bar" >
+    
+    <h1 class="site-title">אתר החיות של עיליי</h1>
+        
 </td>
-        </tr>
+
+</tr>
+
         
     
         <tr>
-            <td>
+            <td colspan="2">
                 <a href="דף%20הבית.aspx">
                     <img class="menu" src="Images/דף%20הבית.png" /></a>
                 <a href="אודות.aspx">
@@ -49,12 +68,14 @@
             </td>
 
         </tr>
-        <tr>
-            <td>
+        <tr style="height:500px;vertical-align:top"
+            >
+            <td colspan="2">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </td>
         </tr>
     </table>
+        </center>
 </body>
 </html>

@@ -16,7 +16,7 @@ public partial class AspNet : System.Web.UI.Page
             strkefel += "<tr>";
             for (int j = 1; j <= 10; j++)
             {
-                strkefel += "<td>";
+                strkefel += "<td style='border: 3px solid black'>";
                 strkefel += j * i;
                 strkefel += "</td>";
             }
