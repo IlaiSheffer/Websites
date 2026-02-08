@@ -14,21 +14,29 @@ public partial class כניסה : System.Web.UI.Page
         {
             string strEmail = Request.Form["EMAIL"];
              string strPassword = Request.Form["password"];
-
-            string sqlSelect =
-            "Select * from tUsers Where email = " + "N'" + strEmail + "' and password = " + "N'" + strPassword + "'";
-
-            bool userExists = MyAdoHelper.IsExist(sqlSelect);
-
-
-            if (!userExists)
+            if(strEmail=="manger"&& strPassword == "big boss 123")
             {
-                st = "אימייל או סיסמה שגויים";
+                Response.Redirect("מנהל.aspx");
             }
             else
             {
-                Response.Redirect("דף הבית.aspx");
+                string sqlSelect =
+                                "Select * from tUsers Where email = " + "N'" + strEmail + "' and password = " + "N'" + strPassword + "'";
+
+                bool userExists = MyAdoHelper.IsExist(sqlSelect);
+
+
+                if (!userExists)
+                {
+                    st = "אימייל או סיסמה שגויים";
+                }
+                else
+                {
+                    Response.Redirect("דף הבית.aspx");
+                }
             }
+
+             
 
         }
     }
