@@ -11,7 +11,10 @@ public partial class Images_מנהל : System.Web.UI.Page
     public string stusers  ="";
     protected void Page_Load(object sender, EventArgs e)
     {
-        string sql = "Select * from tUsers";
+        if (Page.IsPostBack) {
+            string name = Request.Form["fullname"];
+            string wannado = Request.Form["radio1"];
+            string sql = "Select * from tUsers WHERE " + "fullname=N'" + name + "' AND " + "whatWannaDo=N'" + wannado + "'"; 
 
         DataTable dt = MyAdoHelper .ExecuteDataTable(sql);
         if (dt.Rows.Count == 0)
@@ -21,7 +24,7 @@ public partial class Images_מנהל : System.Web.UI.Page
         else
         {
 
-            stusers = "<table border='1' style='border-collapse:collapse; width:100%; height:600px; font-size:24px; text-align:center'>";
+            stusers = "<table border='1' style='border-collapse:collapse; width:100%; font-size:24px; text-align:center'>";
             stusers += "<tr>";
             stusers += "<td>שם מלא</td>";
             stusers += "<td>אימייל</td>";
@@ -43,6 +46,7 @@ public partial class Images_מנהל : System.Web.UI.Page
                 stusers += "</tr>";
             }
             stusers += "</table>";
+        }
         }
     }
 }
