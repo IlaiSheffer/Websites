@@ -11,10 +11,10 @@ public partial class Images_מנהל : System.Web.UI.Page
     public string stusers  ="";
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Page.IsPostBack) {
+        //if (Page.IsPostBack) {
             string name = Request.Form["fullname"];
             string wannado = Request.Form["radio1"];
-            string sql = "Select * from tUsers WHERE " + "fullname=N'" + name + "' AND " + "whatWannaDo=N'" + wannado + "'"; 
+            string sql = "Select * from tUsers WHERE " + "fullname LIKE N'%" + name + "%' AND " + "whatWannaDo LIKE N'%" + wannado + "%'"; 
 
         DataTable dt = MyAdoHelper .ExecuteDataTable(sql);
         if (dt.Rows.Count == 0)
@@ -47,6 +47,6 @@ public partial class Images_מנהל : System.Web.UI.Page
             }
             stusers += "</table>";
         }
-        }
+       // }
     }
 }
