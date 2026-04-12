@@ -16,6 +16,7 @@ public partial class כניסה : System.Web.UI.Page
              string strPassword = Request.Form["password"];
             if(strEmail=="manger"&& strPassword == "big boss 123")
             {
+                Session["username"] = "מנהל";
                 Response.Redirect("מנהל.aspx");
             }
             else
@@ -28,10 +29,12 @@ public partial class כניסה : System.Web.UI.Page
 
                 if (!userExists)
                 {
+                    Session["username"] = "אורח";
                     st = "אימייל או סיסמה שגויים";
                 }
                 else
                 {
+                    Session["username"] = "רשום";
                     Response.Redirect("דף הבית.aspx");
                 }
             }
