@@ -54,12 +54,16 @@
                     <img class="menu" src="Images/אודות.png" /></a>
                 <a href="גלריה.aspx">
                     <img class="menu" src="Images/גלריה.png" /></a>
+                <%if (Session["guest"] == "ok") { %>
                 <a href="הרשמה.aspx">
                     <img class="menu" src="Images/הרשמה.png" /></a>
                 <a href="כניסה.aspx">
                     <img class="menu"  src="Images/כניסה.png" /></a>
+                    <% } %>
+                <%if (Session["manger"] == "ok") { %>
                 <a href="מנהל.aspx">
                     <img class="menu" src="Images/מנהל.png" /></a>
+                <% } %>
                 <a href="חיפוש.aspx">
                     <img class="menu" src="Images/חיפוש.png" /></a>
                     <a href="עדכון%20פרטים.aspx">

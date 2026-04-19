@@ -7,18 +7,18 @@ using System.Web.UI.WebControls;
 
 public partial class הרשמה : System.Web.UI.Page
 {
-    public string fullName, email, age, Prefix, phoneNumber, radio1, checkCities, textarea1, update, password, st = "";
+    public string st = "";
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Page.IsPostBack)
         {
-            radio1 = Request.Form["radio1"];
-            fullName = Request.Form["fullname"];
-            email = Request.Form["EMAIL"];
-            Prefix = Request.Form["Prefix"];
-            phoneNumber = Request.Form["phoneNumber"];
-            update = Request.Form["radio2"];
-            password = Request.Form["password"];
+            string radio1 = Request.Form["radio1"];
+            string fullName = Request.Form["fullname"];
+            string email = Request.Form["EMAIL"];
+            string Prefix = Request.Form["Prefix"];
+            string phoneNumber = Request.Form["phoneNumber"];
+            string update = Request.Form["radio2"];
+            string password = Request.Form["password"];
 
 
             string sqlSelect =
