@@ -1,14 +1,19 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="הכנסת מקום אימוץ.aspx.cs" Inherits="הכנסת_מקום_אימוץ" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+  <script language="javascript">
+    function cheackAll(){
+    return true;
+    }
+        </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
        הכנסת מקום אימוץ
    <h2>form</h2>
-        <form dir="rtl" method="post" runat="server">
-    :שם מקום אימוץ <input type="text" name="Adoptionplacename" id="Adoptionplacename">
+        <form dir="rtl" method="post" runat="server" onsubmit="return cheackAll();">
+    :שם מקום אימוץ <input type="text" name="Adoptionplacename" id="Adoptionplacename"><span class="error" id="Adoptionplacenameerror"></span>
     <br />
-    :חיות לאימוץ <input type="text" name="animalsforadoption" id="animalsforadoption">
+    :חיות לאימוץ <input type="text" name="animalsforadoption" id="animalsforadoption"><span class="error" id="animalsforadoptionerror"></span>
     <br />
     טלפון של מקום האימוץ
     <!--select name="Prefix" id="Prefix">
@@ -26,11 +31,11 @@
 
     <input type="text" name="phoneNumber" id="phoneNumber">
     <br />
-  :כתובת של מיקום האימוץ <input type="text" name="address" id="address">
+  :כתובת של מיקום האימוץ <input type="text" name="address" id="address"><span class="error" id="addresserror"></span>
 <br />
-:עוד מידע על המקום<textarea rows="5" cols="20" name="info" id="info"></textarea>
+:עוד מידע על המקום<textarea rows="5" cols="20" name="info" id="info"></textarea><span class="error" id="infoerror"></span>
             <br />
-                 <input type="submit" value="שלח"/>
+                 <input type="submit" value="שלח"/><span class="error" id="submiteerror"></span>
 </form>
     <%=st %>
 </asp:Content>
