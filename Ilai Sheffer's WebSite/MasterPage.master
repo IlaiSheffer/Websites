@@ -54,7 +54,7 @@
                     <img class="menu" src="Images/אודות.png" /></a>
                 <a href="גלריה.aspx">
                     <img class="menu" src="Images/גלריה.png" /></a>
-                <%if (Session["guest"] == "ok") { %>
+                <%if  (Session["manger"] != "ok" && Session["user"] != "ok") { %>
                 <a href="הרשמה.aspx">
                     <img class="menu" src="Images/הרשמה.png" /></a>
                 <a href="כניסה.aspx">
@@ -68,8 +68,10 @@
                     <img class="menu" src="Images/חיפוש.png" /></a>
                     <a href="עדכון%20פרטים.aspx">
                     <img class="menu" src="Images/עדכון%20פרטים.png" /></a>
+                <%if  (Session["manger"] == "ok" || Session["user"] == "ok") { %>
                 <a href="יציאה.aspx">
                     <img class="menu" src="Images/יציאה.png" /></a>
+                <% } %>
             </td>
 
         </tr>

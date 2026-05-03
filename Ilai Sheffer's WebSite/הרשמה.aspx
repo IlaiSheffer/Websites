@@ -2,15 +2,101 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     <script language="javascript">
-    function cheackAll(){
-    return true;
-    }
-        </script>
+
+        function checkAll() {
+
+            fullnameerror.innerHTML = "";
+            emailerror.innerHTML = "";
+            passworderror.innerHTML = "";
+            prefixerror.innerHTML = "";
+            phoneerror.innerHTML = "";
+            radioerror.innerHTML = "";
+            updateerror.innerHTML = "";
+            submiterror.innerHTML = "";
+
+            let f = true;
+
+            if (!checkFullName()) f = false;
+            if (!checknumber()) f = false;
+            if (!checkemail()) f = false;
+            if (!checkpassword()) f = false;
+            if (!checkprefix()) f = false;
+            if (!checkradio()) f = false;
+            if (!checkupdate()) f = false;
+
+            return f;
+        }
+
+        function checkFullName() {
+            let name = document.getElementById("fullname").value;
+            if (name.length < 2 || name.length > 30) {
+                fullnameerror.innerHTML = "אורך השם לא תקין";
+                return false;
+            }
+            return true;
+        }
+
+        function checknumber() {
+            let phone = document.getElementById("phoneNumber").value;
+            if (phone.length != 7 || isNaN(phone)) {
+                phoneerror.innerHTML = "מספר טלפון חייב להיות 7 ספרות";
+                return false;
+            }
+            return true;
+        }
+
+        function checkemail() {
+            let email = document.getElementById("EMAIL").value;
+            if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                emailerror.innerHTML = "אימייל לא תקין";
+                return false;
+            }
+            return true;
+        }
+
+        function checkpassword() {
+            let pass = document.getElementById("password").value;
+            if (pass.length < 6) {
+                passworderror.innerHTML = "הסיסמה קצרה מדי";
+                return false;
+            }
+            return true;
+        }
+
+        function checkprefix() {
+            let prefix = document.getElementById("Prefix").value;
+            if (prefix == "") {
+                prefixerror.innerHTML = "בחר קידומת";
+                return false;
+            }
+            return true;
+        }
+
+        function checkradio() {
+            let r = document.querySelector('input[name="radio1"]:checked');
+            if (!r) {
+                radioerror.innerHTML = "בחר אפשרות";
+                return false;
+            }
+            return true;
+        }
+
+        function checkupdate() {
+            let r = document.querySelector('input[name="radio2"]:checked');
+            if (!r) {
+                updateerror.innerHTML = "בחר אם לקבל עדכונים";
+                return false;
+            }
+            return true;
+        }
+
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     הרשמה
     <h2>form</h2>
-         <form dir="rtl" method="post" runat="server" onsubmit="return cheackAll();">
+         <form dir="rtl" method="post" runat="server" onsubmit="return checkAll();">
      :שם מלא <input type="text" name="fullname" id="fullname"><span class="error" id="fullnameerror"></span>
      <br />
      :אימייל <input type="text" name="EMAIL" id="EMAIL"><span class="error" id="emailerror"></span>
@@ -40,10 +126,12 @@
      <input type="radio" name="radio1" id="rd4" value="לאמץ חיה">לאמץ חיה
      <br />
             <span class="error" id="radioerror"></span>
+             <br />
       תרצה לקבל עדכונים?<br />
      <input type="radio" name="radio2" id="ad1" value="כן">כן<br />
      <input type="radio" name="radio2" id="ad2" value="לא">לא<br />
              <span class="error" id="updateerror"></span>
+             <br />
      <input type="submit" value="שלח"/><span class="error" id="submiterror"></span>
 
  </form>
