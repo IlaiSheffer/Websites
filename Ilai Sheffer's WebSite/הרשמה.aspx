@@ -29,15 +29,43 @@
 
         function checkFullName() {
             let name = document.getElementById("fullname").value;
+            if (name == "") {
+                fullnameerror.innerHTML = "לא הכנסת שם מלא";
+                return false;
+            }
             if (name.length < 2 || name.length > 30) {
                 fullnameerror.innerHTML = "אורך השם לא תקין";
                 return false;
+            }
+            for (let i = 0; i < name.length; i++) {
+            if (name[i] >= '0' && name[i] <= '9') {
+                fullnameerror.innerHTML = "השם לא יכול להכיל מספרים";
+                return false;
+                 }
+            }
+            for (let i = 0; i < name.length; i++) {
+
+                let ch = name[i];
+
+                if (!(ch >= 'א' && ch <= 'ת') &&
+                    !(ch >= 'a' && ch <= 'z') &&
+                    !(ch >= 'A' && ch <= 'Z') &&
+                    ch != ' ') {
+
+                    fullnameerror.innerHTML = "השם יכול להכיל אותיות בלבד";
+                    return false;
+                }
+
             }
             return true;
         }
 
         function checknumber() {
             let phone = document.getElementById("phoneNumber").value;
+            if (phone.length == 0) {
+                phoneerror.innerHTML = "לא הכנסת מספר";
+                return false;
+            }
             if (phone.length != 7 || isNaN(phone)) {
                 phoneerror.innerHTML = "מספר טלפון חייב להיות 7 ספרות";
                 return false;
@@ -47,7 +75,20 @@
 
         function checkemail() {
             let email = document.getElementById("EMAIL").value;
+            if (email == "") {
+                emailerror.innerHTML = "הכנס אימייל";
+                return false;
+            }
             if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+                emailerror.innerHTML = "אימייל לא תקין";
+                return false;
+            }
+            if (email.indexOf("@") == -1 || email.indexOf("@") != email.lastIndexOf("@")) {
+                emailerror.innerHTML = "חייב להיות @ אחד";
+                return false;
+            }
+            let atPos = email.indexOf("@");
+            if (email.indexOf(".") == -1 || email.indexOf(".") < atPos) {
                 emailerror.innerHTML = "אימייל לא תקין";
                 return false;
             }
@@ -56,10 +97,15 @@
 
         function checkpassword() {
             let pass = document.getElementById("password").value;
+            if (pass == "") {
+                passworderror.innerHTML = "הכנס סיסמה";
+                return false;
+            }
             if (pass.length < 6) {
                 passworderror.innerHTML = "הסיסמה קצרה מדי";
                 return false;
             }
+
             return true;
         }
 
