@@ -64,11 +64,14 @@
                 <a href="מנהל.aspx">
                     <img class="menu" src="Images/מנהל.png" /></a>
                 <% } %>
-                <a href="חיפוש.aspx">
-                    <img class="menu" src="Images/חיפוש.png" /></a>
-                    <a href="עדכון%20פרטים.aspx">
-                    <img class="menu" src="Images/עדכון%20פרטים.png" /></a>
                 <%if  (Session["manger"] == "ok" || Session["user"] == "ok") { %>
+                <a href="הכנסת%20מקום%20אימוץ.aspx">הכנסת מקום אימוץ.aspx>
+                        <img class="menu" src="Images/הכנסת%20מקום%20אימוץ.png" /></a>
+                <% } %>
+                <a href="שליפת%20מקום%20אימוץ.aspx">     
+                            <img class="menu" src="Images/מקומות%20אימוץ.png" /></a> 
+                <%if  (Session["manger"] == "ok" || Session["user"] == "ok") { %>
+
                 <a href="יציאה.aspx">
                     <img class="menu" src="Images/יציאה.png" /></a>
                 <% } %>
