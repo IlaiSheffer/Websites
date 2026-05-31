@@ -23,6 +23,8 @@
     font-size: 36px;
     font-weight: bold;
     margin-top: 20px;
+}
+
 
 
     </style>
@@ -64,10 +66,12 @@
                 <a href="מנהל.aspx">
                     <img class="menu" src="Images/מנהל.png" /></a>
                 <% } %>
-                <%if  (Session["manger"] == "ok" || Session["user"] == "ok") { %>
-                <a href="הכנסת%20מקום%20אימוץ.aspx">הכנסת מקום אימוץ.aspx>
-                        <img class="menu" src="Images/הכנסת%20מקום%20אימוץ.png" /></a>
+                <% if (Session["manger"] == "ok" || Session["user"] == "ok") { %>
+                <a href="הכנסת%20מקום%20אימוץ.aspx">
+                    <img src="Images/‏‏הכנסת%20מקום%20אימוץ%20-%20עותק.png" width="188" /> </a>
                 <% } %>
+
+
                 <a href="שליפת%20מקום%20אימוץ.aspx">     
                             <img class="menu" src="Images/מקומות%20אימוץ.png" /></a> 
                 <%if  (Session["manger"] == "ok" || Session["user"] == "ok") { %>

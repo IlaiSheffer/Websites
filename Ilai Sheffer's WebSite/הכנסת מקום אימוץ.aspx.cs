@@ -14,10 +14,11 @@ public partial class הכנסת_מקום_אימוץ : System.Web.UI.Page
         {
             
             string Adoptionplacename = Request.Form["Adoptionplacename"];
-            string animalsforadoption = Request.Form["animalsforadoption"];
+            //string animalsforadoption = Request.Form["animalsforadoption"];
             string Prefix = Request.Form["Prefix"];
             string phoneNumber = Request.Form["phoneNumber"];
             string address = Request.Form["address"];
+            string pets = Request.Form["pets"];
             string info = Request.Form["info"];
 
 
@@ -29,11 +30,13 @@ public partial class הכנסת_מקום_אימוץ : System.Web.UI.Page
            if (!userExists)
             {
                 string sqlInsert =
-                    "INSERT INTO Adoptionplaces (Adoptionplacename,animalsforadoption,placephonenumber,Adoptioncenteraddress,moreinfo) VALUES (" +
+                    "INSERT INTO Adoptionplaces (Adoptionplacename," +
+                                 "placephonenumber," +
+                                 "Adoptioncenteraddress,pets,moreinfo) VALUES (" +
                     "N'" + Adoptionplacename + "'," +
-                    "N'" + animalsforadoption + "'," +
                     "'" + phoneNumber + "'," +
                     "N'" + address + "'," +
+                    "N'" + pets + "'," +
                     "N'" + info + "'" +
                     ")";
                 MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
