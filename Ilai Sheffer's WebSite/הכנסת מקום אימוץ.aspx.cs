@@ -40,7 +40,7 @@ public partial class הכנסת_מקום_אימוץ : System.Web.UI.Page
                     "N'" + info + "'" +
                     ")";
                 MyAdoHelper.DoQuery("MyDB.mdf", sqlInsert);
-                Response.Redirect("דף הבית.aspx");
+                Response.Redirect("שליפת מקום אימוץ.aspx");
             }
             else
             {

@@ -140,8 +140,8 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    הרשמה
-    <h2>form</h2>
+           <h2>הרשמה</h2>
+
          <form dir="rtl" method="post" runat="server" onsubmit="return checkAll();">
      :שם מלא <input type="text" name="fullname" id="fullname"><span class="error" id="fullnameerror"></span>
      <br />

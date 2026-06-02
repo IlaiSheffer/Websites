@@ -4,6 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
         </form>
+           <h2>מקומות אימוץ</h2>
+
     <%=stadp %>
 </asp:Content>
 

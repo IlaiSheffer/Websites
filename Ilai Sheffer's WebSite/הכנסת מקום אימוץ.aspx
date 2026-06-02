@@ -31,8 +31,12 @@
       }
       function checkphoneNumber() {
           let phone = document.getElementById("phoneNumber").value;
-          if (phone.length != 10) {
+          if (phone == "") {
               phoneNumbererror.innerHTML = "אנא הכנס מספר";
+              return false;
+          }
+          if (phone.length != 10) {
+              phoneNumbererror.innerHTML = "אנא הכנס מספר באורך תקני";
               return false;
           }
           return true;
@@ -67,8 +71,7 @@
   </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-       הכנסת מקום אימוץ
-   <h2>form</h2>
+       <h2>הכנסת מקום אימוץ</h2>
         <form dir="rtl" method="post" runat="server" onsubmit="return checkAll();">
     :שם מקום אימוץ <input type="text" name="Adoptionplacename" id="Adoptionplacename"><span class="error" id="Adoptionplacenameerror"></span>
     <br />
@@ -100,10 +103,12 @@
   <label for="pet3"> עוד מגוון</label><br>
             <br />
        <span class="error" id="petserror"></span>
-        <br />
-:עוד מידע על המקום<textarea rows="5" cols="20" name="info" id="info"></textarea><span class="error" id="infoerror"></span>
-            <br />
-                 <input type="submit" value="שלח"/><span class="error" id="submiteerror"></span>
+<div>עוד מידע על המקום:</div>
+<textarea rows="5" cols="20" name="info" id="info"></textarea>
+<span class="error" id="infoerror"></span>
+
+<br />
+<input type="submit" value="שלח"/><span class="error" id="submiteerror"></span>
 </form>
     <%=st %>
 </asp:Content>
