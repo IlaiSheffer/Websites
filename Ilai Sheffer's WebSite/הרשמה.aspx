@@ -42,7 +42,7 @@
                 fullnameerror.innerHTML = "השם לא יכול להכיל מספרים";
                 return false;
                  }
-            }
+                }
             for (let i = 0; i < name.length; i++) {
 
                 let ch = name[i];
@@ -86,12 +86,9 @@
             if (email.indexOf("@") == -1 || email.indexOf("@") != email.lastIndexOf("@")) {
                 emailerror.innerHTML = "חייב להיות @ אחד";
                 return false;
-            }
-            let atPos = email.indexOf("@");
-            if (email.indexOf(".") == -1 || email.indexOf(".") < atPos) {
-                emailerror.innerHTML = "אימייל לא תקין";
-                return false;
-            }
+            
+            
+        }
             return true;
         }
 
@@ -140,6 +137,8 @@
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <%-- עיצוב כללי: ה-DIV עוטף את כל תוכן העמוד כדי לשלוט ברוחב ובמרכוז --%>
+<div style="max-width: 800px; margin: auto; line-height: 1.6; padding: 20px;">
            <h2>הרשמה</h2>
 
          <form dir="rtl" method="post" runat="server" onsubmit="return checkAll();">
@@ -149,8 +148,10 @@
      <br />
      :סיסמה לאתר <input type="text" name="password" id="password"><span class="error" id="passworderror"></span>
      <br />
+             
      טלפון
-     <select name="Prefix" id="Prefix"><span class="error" id="prefixerror"></span>
+             <input type="text" name="phoneNumber" id="phoneNumber"><span class="error" id="phoneerror"></span>
+     <select name="Prefix" id="Prefix">
          <option value="050">050</option>
          <option value="051">051</option>
          <option value="052">052</option>
@@ -162,8 +163,9 @@
          <option value="058">058</option>
          <option value="059">059</option>
      </select>
-
-     <input type="text" name="phoneNumber" id="phoneNumber"><span class="error" id="phoneerror"></span>
+             <span class="error" id="prefixerror"></span>
+     
+                 
      <br />
      מה אתה רוצה לעשות?<br />
      <input type="radio" name="radio1" id="rd1" value="לחפש חיה אבודה">לחפש חיה אבודה<br />
@@ -179,7 +181,7 @@
              <span class="error" id="updateerror"></span>
              <br />
      <input type="submit" value="שלח"/><span class="error" id="submiterror"></span>
-
+              </div>
  </form>
 <%=st %>
 </asp:Content>

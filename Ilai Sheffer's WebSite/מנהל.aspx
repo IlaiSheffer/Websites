@@ -3,9 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <form runat="server" method="post" >
                <h2>מנהל</h2>
-
+    <form method="post" runat="server">
     :שם מלא <input type="text" name="fullname" id="fullname">
 <br />
          מה המשתמש רוצה לעשות?<br />
@@ -14,7 +13,7 @@
      <input type="radio" name="radio1" id="rd3" value="להעלות חיה לחיפוש">להעלות חיה לאימוץ<br />
      <input type="radio" name="radio1" id="rd4" value="לאמץ חיה">לאמץ חיה
      <br />
-    <input type="submit" value="שלח"/>
+    <input type="submit" value="חפש"/>
         </form>
     <%=stusers %>
 </asp:Content>

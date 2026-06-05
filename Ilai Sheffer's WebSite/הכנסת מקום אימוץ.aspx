@@ -71,6 +71,8 @@
   </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+        <%-- עיצוב כללי: ה-DIV עוטף את כל תוכן העמוד כדי לשלוט ברוחב ובמרכוז --%>
+<div style="max-width: 800px; margin: auto; line-height: 1.6; padding: 20px;">
        <h2>הכנסת מקום אימוץ</h2>
         <form dir="rtl" method="post" runat="server" onsubmit="return checkAll();">
     :שם מקום אימוץ <input type="text" name="Adoptionplacename" id="Adoptionplacename"><span class="error" id="Adoptionplacenameerror"></span>
@@ -109,6 +111,7 @@
 
 <br />
 <input type="submit" value="שלח"/><span class="error" id="submiteerror"></span>
+            </div>
 </form>
     <%=st %>
 </asp:Content>

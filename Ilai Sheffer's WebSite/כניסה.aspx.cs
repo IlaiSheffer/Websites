@@ -33,7 +33,8 @@ public partial class כניסה : System.Web.UI.Page
                 {
                     Session["guest"] = "ok";
                     Session["username"] = "אורח";
-                    st = "אימייל או סיסמה שגויים";
+                    st = "                                  אימייל או סיסמה שגויים";
+
                 }
                 else
                 {

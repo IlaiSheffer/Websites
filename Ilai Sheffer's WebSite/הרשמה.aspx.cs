@@ -26,7 +26,11 @@ public partial class הרשמה : System.Web.UI.Page
 
             bool userExists = MyAdoHelper.IsExist(sqlSelect);
 
-
+        /*    if (email == "manger")
+            {
+                st = "האיימיל הנתון תפוס על ידי המערכת";
+            }
+        */
             if (!userExists)
             {
                 string sqlInsert =
@@ -46,6 +50,8 @@ public partial class הרשמה : System.Web.UI.Page
             {
                 st = "האיימיל הנתון כבר רשום במערכת";
             }
+            
         }
     }
 }
+/*<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="הרשמה.aspx.cs" Inherits="הרשמה" %>*/
