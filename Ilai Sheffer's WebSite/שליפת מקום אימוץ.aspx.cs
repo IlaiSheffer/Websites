@@ -27,6 +27,10 @@ public partial class שליפת_מקום_אימוץ : System.Web.UI.Page
         }
         else
         {
+            /*if (dt.Rows.Count == 1)
+{
+    stadp = "נמצא מקום אימוץ אחד בלבד";
+}*/
             // בניית טבלת HTML להצגת התוצאות
             stadp = "<table border='1' style='border-collapse:collapse; width:100%; font-size:24px; text-align:center'>";
             stadp += "<tr>";

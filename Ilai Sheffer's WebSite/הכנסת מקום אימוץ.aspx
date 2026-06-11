@@ -45,6 +45,11 @@
               phoneNumbererror.innerHTML = "אנא הכנס מספר באורך תקני";
               return false;
           }
+          /*if (!phone.startsWith("05")) {
+    phoneNumbererror.innerHTML ="הטלפון חייב להתחיל ב־05";
+    return false;
+}
+          */
           return true;
       }
 

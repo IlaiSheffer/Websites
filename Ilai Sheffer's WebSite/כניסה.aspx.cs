@@ -36,7 +36,7 @@ public partial class כניסה : System.Web.UI.Page
                 {
                     Session["guest"] = "ok";       // סימון כאורח
                     Session["username"] = "אורח"; // שם שיוצג באתר
-                    st = "                                  אימייל או סיסמה שגויים"; // הודעת שגיאה
+                    st = " אימייל או סיסמה שגויים"; // הודעת שגיאה
                 }
                 else
                 {

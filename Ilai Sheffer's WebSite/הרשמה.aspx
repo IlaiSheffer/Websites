@@ -73,7 +73,7 @@
                 phoneerror.innerHTML = "לא הכנסת מספר";
                 return false;
             }
-            if (phone.length != 7 || isNaN(phone)) {
+            if (phone.length != 7 || isNaN(phone)) {//הisNaN בודק אם הערך הוא לא מספר
                 phoneerror.innerHTML = "מספר טלפון חייב להיות 7 ספרות";
                 return false;
             }
