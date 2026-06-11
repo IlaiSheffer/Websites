@@ -1,23 +1,21 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
-
-<!DOCTYPE html>
-
-<html>
-<head runat="server">
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %><!DOCTYPE html><html><head runat="server">
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style>
+/* עיצוב עבור סרגל התפריט - מציג את האלמנטים בשורה, עם מרווח של 20 פיקסלים וממרכז אותם */
 .menu-bar { 
     display: flex;
     gap: 20px;
     align-items: center;
     justify-content: center;
 }
+ /* קביעת רוחב קבוע לתמונות התפריט ושמירה על פרופורציית הגובה */
  img.menu {
     width: 150px;
     height: auto;
     }
+/* עיצוב כותרת האתר - מרכוס הטקסט, הגדלת הגופן, הדגשה ומרווח מלמעלה */
 .site-title {
     text-align: center;
     font-size: 36px;
@@ -27,24 +25,17 @@
 
 
 
-    </style>
-</head>
-<body dir="rtl">
+    </style></head><body dir="rtl">
     <h1>שלום <%=Session["username"]%></h1>    
     <center>
-    <table width="80%" border="0">
-<tr>
+    <table width="80%" border="0"><tr>
     <td width="150px">
         <img src="Images/לוגו.png" style="width:100px; height:auto;">
     </td>
-
-<td class="menu-bar" >
+    <td class="menu-bar" >
     
     <h1 class="site-title">אתר החיות של עיליי</h1>
-        
-</td>
-
-</tr>
+        </td></tr>
 
         
     
@@ -90,6 +81,4 @@
             </td>
         </tr>
     </table>
-        </center>
-</body>
-</html>
+        </center></body></html>

@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     
    
-    <%-- עיצוב כללי: ה-DIV עוטף את כל תוכן העמוד כדי לשלוט ברוחב ובמרכוז --%>
+    <%-- עיצוב כללי: ה-div עוטף את כל תוכן העמוד כדי לשלוט ברוחב ובמרכוז --%>
 <div style="max-width: 800px; margin: auto; line-height: 1.6; padding: 20px;">
          <form dir="rtl" method="post" runat="server">
 <h2>כניסה</h2>

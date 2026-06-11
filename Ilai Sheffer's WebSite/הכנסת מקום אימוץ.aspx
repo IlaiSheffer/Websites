@@ -1,27 +1,31 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="הכנסת מקום אימוץ.aspx.cs" Inherits="הכנסת_מקום_אימוץ" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="הכנסת מקום אימוץ.aspx.cs" Inherits="הכנסת_מקום_אימוץ" %> 
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
   <script language="javascript">
 
       function checkAll() {
-
+          /* איפוס הודעות שגיאה לפני בדיקה מחדש */
           Adoptionplacenameerror.innerHTML = "";
           phoneNumbererror.innerHTML = "";
           addresserror.innerHTML = "";
           petserror.innerHTML = "";
           infoerror.innerHTML = "";
 
-          let f = true;
+          let f = true; /* משתנה בוליאני שמייצג האם כל הבדיקות עברו */
 
+          /* קריאה לכל פונקציות הבדיקה — אם אחת נכשלת, f הופך ל־false */
           if (!checkAdoptionplacename()) f = false;
           if (!checkphoneNumber()) f = false;
           if (!checkaddress()) f = false;
           if (!checkpets()) f = false;
           if (!checkinfo()) f = false;
 
-          return f;
+          return f; /* מחזיר true רק אם כל הבדיקות עברו */
       }
+
       function checkAdoptionplacename() {
+          /* בדיקת שדה שם מקום אימוץ */
           let name = document.getElementById("Adoptionplacename").value;
           if (name == "") {
               Adoptionplacenameerror.innerHTML = "אנא הכנס שם";
@@ -29,7 +33,9 @@
           }
           return true;
       }
+
       function checkphoneNumber() {
+          /* בדיקת מספר טלפון */
           let phone = document.getElementById("phoneNumber").value;
           if (phone == "") {
               phoneNumbererror.innerHTML = "אנא הכנס מספר";
@@ -41,26 +47,32 @@
           }
           return true;
       }
+
       function checkaddress() {
-            let address = document.getElementById("address").value;
-            if (address == "") {
-                addresserror.innerHTML = "אנא הכנס כתובת";
-                return false;
-            }
-            return true;
+          /* בדיקת כתובת */
+          let address = document.getElementById("address").value;
+          if (address == "") {
+              addresserror.innerHTML = "אנא הכנס כתובת";
+              return false;
+          }
+          return true;
       }
-        function checkpets() {
-            let pet1 = document.getElementById("pet1").checked;
-            let pet2 = document.getElementById("pet2").checked;
-            let pet3 = document.getElementById("pet3").checked;
-    
-            if (!pet1 && !pet2 && !pet3) {
-                petserror.innerHTML = "אנא בחר לפחות חיה אחת";
-                return false;
-            }
-            return true;
+
+      function checkpets() {
+          /* בדיקה שלפחות חיה אחת נבחרה */
+          let pet1 = document.getElementById("pet1").checked;
+          let pet2 = document.getElementById("pet2").checked;
+          let pet3 = document.getElementById("pet3").checked;
+
+          if (!pet1 && !pet2 && !pet3) {
+              petserror.innerHTML = "אנא בחר לפחות חיה אחת";
+              return false;
+          }
+          return true;
       }
+
       function checkinfo() {
+          /* בדיקת שדה מידע נוסף */
           let more = document.getElementById("info").value;
           if (more == "") {
               infoerror.innerHTML = "הכנס מידע נוסף";
@@ -70,14 +82,24 @@
       }
   </script>
 </asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-        <%-- עיצוב כללי: ה-DIV עוטף את כל תוכן העמוד כדי לשלוט ברוחב ובמרכוז --%>
+
+        <%-- עיצוב כללי: ה-div(עוד מידע עליו באודות)b עוטף את כל תוכן העמוד כדי לשלוט ברוחב ובמרכוז --%>
 <div style="max-width: 800px; margin: auto; line-height: 1.6; padding: 20px;">
        <h2>הכנסת מקום אימוץ</h2>
+
+        <!-- טופס שליחת נתונים, כולל קריאה לפונקציית בדיקה לפני שליחה -->
         <form dir="rtl" method="post" runat="server" onsubmit="return checkAll();">
-    :שם מקום אימוץ <input type="text" name="Adoptionplacename" id="Adoptionplacename"><span class="error" id="Adoptionplacenameerror"></span>
+
+    :שם מקום אימוץ 
+    <input type="text" name="Adoptionplacename" id="Adoptionplacename">
+    <span class="error" id="Adoptionplacenameerror"></span>
     <br />
+
     טלפון של מקום האימוץ
+
+    <!-- רשימת קידומות (מוסתרת כרגע בהערה) -->
     <!--select name="Prefix" id="Prefix">
         <option value="050">050</option>
         <option value="051">051</option>
@@ -91,28 +113,42 @@
         <option value="059">059</option>
     </select-->
 
-    <input type="text" name="phoneNumber" id="phoneNumber"><span class="error" id="phoneNumbererror"></span>
+    <input type="text" name="phoneNumber" id="phoneNumber">
+    <span class="error" id="phoneNumbererror"></span>
     <br />
-  :כתובת של מיקום האימוץ <input type="text" name="address" id="address"><span class="error" id="addresserror"></span>
+
+  :כתובת של מיקום האימוץ 
+  <input type="text" name="address" id="address">
+  <span class="error" id="addresserror"></span>
 <br />
+
     אילו חיות יש לאימוץ:
-            <br />
+    <br />
+
    <input type="checkbox" id="pet1" name="pets" value="כלב">
-  <label for="pet1"> כלב</label><br>
-  <input type="checkbox" id="pet2" name="pets" value="חתול">
-  <label for="pet2"> חתול</label><br>
-  <input type="checkbox" id="pet3" name="pets" value="עוד">
-  <label for="pet3"> עוד מגוון</label><br>
-            <br />
-       <span class="error" id="petserror"></span>
+   <label for="pet1"> כלב</label><br>
+
+   <input type="checkbox" id="pet2" name="pets" value="חתול">
+   <label for="pet2"> חתול</label><br>
+
+   <input type="checkbox" id="pet3" name="pets" value="עוד">
+   <label for="pet3"> עוד מגוון</label><br>
+
+   <br />
+   <span class="error" id="petserror"></span>
+
 <div>עוד מידע על המקום:</div>
 <textarea rows="5" cols="20" name="info" id="info"></textarea>
 <span class="error" id="infoerror"></span>
 
 <br />
-<input type="submit" value="שלח"/><span class="error" id="submiteerror"></span>
-            </div>
-</form>
-    <%=st %>
-</asp:Content>
 
+<input type="submit" value="שלח"/>
+<span class="error" id="submiteerror"></span>
+
+</div>
+</form>
+
+<%=st %>
+
+</asp:Content>

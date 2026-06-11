@@ -15,6 +15,7 @@
      <br />
     <input type="submit" value="חפש"/>
         </form>
+ <!-- הצגת תוצאות חיפוש או הודעות מהשרת -->
     <%=stusers %>
 </asp:Content>
 

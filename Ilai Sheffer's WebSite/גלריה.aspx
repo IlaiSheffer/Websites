@@ -17,8 +17,7 @@
            <h2>גלריה</h2>
 
     
-    <div class="my-gallery" style="text-align: center; padding: 20px;">
-        
+<div class="my-gallery" style="text-align: center; /* ממרכז את התוכן של הגלריה */ padding: 20px; /* (בין התמונות)מוסיף מרווח פנימי מסביב */">        
         <img src="Images/חתול-ישן-ואולי-חולם-600.jpg" />
         <img src="Images/webp.net-resizeimage6154703625049578725.jpg" />
         <img src="Images/exotic-pet-home.jpg" />

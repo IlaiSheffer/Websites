@@ -8,44 +8,43 @@ using System.Web.UI.WebControls;
 
 public partial class כניסה : System.Web.UI.Page
 {
-    public string st = "";
+    public string st = ""; // משתנה להצגת הודעות שגיאה/מידע למשתמש
+
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Page.IsPostBack)
+        if (Page.IsPostBack) // בדיקה האם המשתמש לחץ על "שלח"
         {
-            string strEmail = Request.Form["EMAIL"];
-             string strPassword = Request.Form["password"];
-            if(strEmail=="manger"&& strPassword == "big boss 123")
+            string strEmail = Request.Form["EMAIL"];      // קבלת האימייל מהטופס
+            string strPassword = Request.Form["password"]; // קבלת הסיסמה מהטופס
+
+            // בדיקה האם זה מנהל (אימייל + סיסמה מיוחדים)
+            if (strEmail == "manger" && strPassword == "big boss 123")
             {
-                Session["manger"] = "ok";
-                Session["username"] = "מנהל";
-                Response.Redirect("מנהל.aspx");
+                Session["manger"] = "ok";     // סימון שהמשתמש הוא מנהל
+                Session["username"] = "מנהל"; // שם שיוצג באתר
+                Response.Redirect("מנהל.aspx"); // מעבר לדף מנהל
             }
             else
             {
+                // בדיקה במסד הנתונים האם המשתמש קיים
                 string sqlSelect =
-                                "Select * from tUsers Where email = " + "N'" + strEmail + "' and password = " + "N'" + strPassword + "'";
+                    "Select * from tUsers Where email = " + "N'" + strEmail + "' and password = " + "N'" + strPassword + "'";
 
-                DataTable dt = MyAdoHelper.ExecuteDataTable(sqlSelect);
+                DataTable dt = MyAdoHelper.ExecuteDataTable(sqlSelect); // קבלת התוצאה מהמסד
 
-
-                if (dt.Rows.Count==0)
+                if (dt.Rows.Count == 0) // אם אין תוצאות — המשתמש לא קיים
                 {
-                    Session["guest"] = "ok";
-                    Session["username"] = "אורח";
-                    st = "                                  אימייל או סיסמה שגויים";
-
+                    Session["guest"] = "ok";       // סימון כאורח
+                    Session["username"] = "אורח"; // שם שיוצג באתר
+                    st = "                                  אימייל או סיסמה שגויים"; // הודעת שגיאה
                 }
                 else
                 {
-                    Session["user"] = "ok";
-                    Session["username"] = dt.Rows[0]["fullname"];
-                    Response.Redirect("דף הבית.aspx");
+                    Session["user"] = "ok"; // סימון כמשתמש רגיל
+                    Session["username"] = dt.Rows[0]["fullname"]; // שם המשתמש מהמסד
+                    Response.Redirect("דף הבית.aspx"); // מעבר לדף הבית
                 }
             }
-
-             
-
         }
     }
 }
